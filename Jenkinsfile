@@ -1,9 +1,5 @@
 pipeline {
     agent any
-
-    options {
-        skipDefaultCheckout(true)
-    }
     
     environment {
         DOCKER_HUB_CREDS = credentials('docker-hub-creds')
