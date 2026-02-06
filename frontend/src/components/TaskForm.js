@@ -6,7 +6,7 @@ const TaskForm = ({ input, setInput, addTask }) => {
       <input 
         value={input} 
         onChange={(e) => setInput(e.target.value)} 
-        placeholder="Kya kaam baki hai bhai?"
+        placeholder="To-Do List?"
       />
       <button type="submit">Add Task</button>
     </form>
