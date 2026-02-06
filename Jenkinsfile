@@ -7,12 +7,6 @@ pipeline {
         APP_NAME         = 'argo'
     }
     stages {
-        stage('Checkout') {
-            steps {
-                // Dashboard ki settings ko reuse karega, do baar mehnat nahi hogi
-                checkout scm
-            }
-        }
         stage('Docker Login') {
             steps {
                 sh "echo \$DOCKER_HUB_CREDS_PSW | docker login -u \$DOCKER_HUB_CREDS_USR --password-stdin"
