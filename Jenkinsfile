@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Clone Code') {
             steps {
-                git 'https://github.com/shivamsharma20work-afk/CloudTask-Gitops'
+                git 'https://github.com/shivamsharma20work-afk/CloudTask-Gitops.git'
             }
         }
         
