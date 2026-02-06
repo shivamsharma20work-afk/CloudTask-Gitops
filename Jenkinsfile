@@ -7,11 +7,6 @@ pipeline {
         DOCKER_CREDS = credentials('docker-hub-creds')
     }
     stages {
-        stage('Clone Code') {
-            steps {
-                git 'https://github.com/shivamsharma20work-afk/CloudTask-Gitops'
-            }
-        }
         
         stage('Docker Login') {
             steps {
