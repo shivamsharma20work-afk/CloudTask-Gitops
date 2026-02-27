@@ -2,7 +2,7 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_HUB_CREDS = credentials('docker-hub-creds')
+        DOCKER_HUB_CREDS = credentials('dockerHubCred')
         DOCKER_HUB_USER  = 'shivam011'
         APP_NAME         = 'argo'
     }
