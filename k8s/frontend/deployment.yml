@@ -1,0 +1,22 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+  name: frontend-deployment
+  namespace: cloudtask
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels: 
+        app: frontend
+    spec:
+      imagePullSecrets:
+      - name: ecr-secret
+      containers:
+      - name: frontend-image
+        image: 288096932508.dkr.ecr.ap-south-1.amazonaws.com/todo-repo:frontend-6
+        ports:
+        - containerPort: 80

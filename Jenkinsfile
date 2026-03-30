@@ -46,14 +46,5 @@ pipeline {
                 '''
             }
         }
-        stage('Docker-Compose') {
-            steps{
-                sh'''
-                docker compose down
-                docker compose pull
-                docker compose up -d
-                '''
-            }
-        }
     }
 }
