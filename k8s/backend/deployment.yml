@@ -17,9 +17,21 @@ spec:
       - name: ecr-secret
       containers:
       - name: backend-image
-        image: 288096932508.dkr.ecr.ap-south-1.amazonaws.com/todo-repo:backend-8
+        image: 288096932508.dkr.ecr.ap-south-1.amazonaws.com/todo-repo:backend-9
         ports:
         - containerPort: 5000
         env:
         - name: MONGO_URI
           value: mongodb://mongo-service:27017
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5000
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 5
