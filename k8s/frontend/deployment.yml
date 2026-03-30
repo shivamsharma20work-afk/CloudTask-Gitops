@@ -20,3 +20,10 @@ spec:
         image: 288096932508.dkr.ecr.ap-south-1.amazonaws.com/todo-repo:frontend-8
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "200m"
+            memory: "256Mi"
